@@ -2,65 +2,116 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de IMC</title>
+
     <style>
         body {
-            background-color: hsl(60, 100%, 50%); /* Amarelo */
+            background-color: hsl(60, 100%, 50%);
             font-family: Arial, sans-serif;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
+
+            box-sizing: border-box;
         }
+
         form {
             background-color: #FFFFFF;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+
+            width: 100%;
+            max-width: 400px;
+
+            padding: 30px;
+            border-radius: 12px;
+
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
             text-align: center;
+
+            box-sizing: border-box;
         }
+
         h1 {
-            color: #FF0000; /* Vermelho */
-            margin-bottom: 20px;
+            color: #FF0000;
+            margin-bottom: 25px;
         }
+
         label {
             display: block;
-            margin: 10px 0 5px;
-            color: #000000; /* Preto */
+            text-align: left;
+
+            margin-bottom: 5px;
+            margin-top: 15px;
+
+            color: #000000;
+            font-weight: bold;
         }
+
         input {
-            width: 90%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ff0000; /* Borda vermelha */
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ff0000;
             border-radius: 5px;
+
+            font-size: 16px;
+
+            box-sizing: border-box;
         }
+
         button {
-            background-color: #FF0000; /* Vermelho */
-            color: #FFFFFF;
-            padding: 10px 20px;
+            background-color: #FF0000;
+            color: white;
+
+            width: 100%;
+
+            padding: 12px;
+            margin-top: 20px;
+
             border: none;
             border-radius: 5px;
-            cursor: pointer;
+
             font-size: 16px;
+            cursor: pointer;
         }
+
         button:hover {
-            background-color: #CC0000; /* Vermelho mais escuro */
+            background-color: #CC0000;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            color: #000000;
         }
     </style>
 </head>
+
 <body>
-    <form method="post">
+
+    <form>
         <h1>Calculadora de IMC</h1>
-        <label for="peso">Peso (kg):</label>
-        <input type="number" id="peso" name="peso" step="0.1" required>
-        <label for="altura">Altura (m):</label>
-        <input type="number" id="altura" name="altura" step="0.01" required>
-        <button type="button" onclick="calcularIMC()">Calcular IMC</button>
+
+        <label for="peso">Peso (kg)</label>
+        <input type="number" id="peso" step="0.1" placeholder="Ex: 70">
+
+        <label for="altura">Altura (m)</label>
+        <input type="number" id="altura" step="0.01" placeholder="Ex: 1.70">
+
+        <button type="button" onclick="calcularIMC()">
+            Calcular IMC
+        </button>
+
         <h2 id="resultado"></h2>
     </form>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
-<script src="script.js"></script>
