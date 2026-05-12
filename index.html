@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Calculadora IMC</title>
 
     <style>
@@ -20,63 +23,73 @@
 
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: stretch;
 
             min-height: 100vh;
         }
-.container {
-    width: 100%;
 
-    background-color: white;
+        .container {
+            width: 100%;
+            min-height: 80vh;
 
-    padding: 25px;
+            background-color: white;
 
-    border-radius: 15px;
+            padding: 30px 25px;
 
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
+            border-radius: 20px;
+
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
         h1 {
             text-align: center;
             color: red;
 
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+
+            font-size: 32px;
         }
 
         label {
             display: block;
 
-            margin-bottom: 8px;
             margin-top: 15px;
+            margin-bottom: 8px;
 
             font-weight: bold;
+
+            font-size: 18px;
         }
 
         input {
             width: 100%;
 
-            padding: 14px;
+            padding: 16px;
 
-            border: 1px solid red;
-            border-radius: 8px;
+            border: 2px solid red;
+            border-radius: 10px;
 
-            font-size: 16px;
+            font-size: 18px;
         }
 
         button {
             width: 100%;
 
-            margin-top: 20px;
+            margin-top: 25px;
 
-            padding: 14px;
+            padding: 16px;
 
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
 
             background-color: red;
             color: white;
 
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
 
             cursor: pointer;
@@ -89,16 +102,16 @@
         #resultado {
             text-align: center;
 
-            margin-top: 20px;
+            margin-top: 25px;
+
+            font-size: 22px;
+            font-weight: bold;
         }
 
-        @media (max-width: 480px) {
+        @media (min-width: 768px) {
             .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 24px;
+                max-width: 500px;
+                min-height: auto;
             }
         }
     </style>
@@ -127,4 +140,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
