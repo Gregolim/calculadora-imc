@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de IMC</title>
+    <title>Calculadora IMC</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: hsl(60, 100%, 50%);
+            margin: 0;
+            padding: 15px;
+
+            background-color: yellow;
+
             font-family: Arial, sans-serif;
 
             display: flex;
@@ -15,88 +23,94 @@
             align-items: center;
 
             min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-
-            box-sizing: border-box;
         }
 
-        form {
-            background-color: #FFFFFF;
-
+        .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
 
-            padding: 30px;
-            border-radius: 12px;
+            background-color: white;
 
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
 
-            text-align: center;
+            border-radius: 15px;
 
-            box-sizing: border-box;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
 
         h1 {
-            color: #FF0000;
+            text-align: center;
+            color: red;
+
             margin-bottom: 25px;
         }
 
         label {
             display: block;
-            text-align: left;
 
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             margin-top: 15px;
 
-            color: #000000;
             font-weight: bold;
         }
 
         input {
             width: 100%;
 
-            padding: 12px;
+            padding: 14px;
 
-            border: 1px solid #ff0000;
-            border-radius: 5px;
+            border: 1px solid red;
+            border-radius: 8px;
 
             font-size: 16px;
-
-            box-sizing: border-box;
         }
 
         button {
-            background-color: #FF0000;
-            color: white;
-
             width: 100%;
 
-            padding: 12px;
             margin-top: 20px;
 
+            padding: 14px;
+
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+
+            background-color: red;
+            color: white;
 
             font-size: 16px;
+            font-weight: bold;
+
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #CC0000;
+            background-color: darkred;
         }
 
         #resultado {
+            text-align: center;
+
             margin-top: 20px;
-            color: #000000;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <form>
-        <h1>Calculadora de IMC</h1>
+    <div class="container">
+
+        <h1>Calculadora IMC</h1>
 
         <label for="peso">Peso (kg)</label>
         <input type="number" id="peso" step="0.1" placeholder="Ex: 70">
@@ -104,12 +118,13 @@
         <label for="altura">Altura (m)</label>
         <input type="number" id="altura" step="0.01" placeholder="Ex: 1.70">
 
-        <button type="button" onclick="calcularIMC()">
+        <button onclick="calcularIMC()">
             Calcular IMC
         </button>
 
         <h2 id="resultado"></h2>
-    </form>
+
+    </div>
 
     <script src="script.js"></script>
 
