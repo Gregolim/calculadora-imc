@@ -2,37 +2,81 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Calculadora IMC</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMC Calculadora</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <main class="app">
+    <section class="calculator-card">
+      <header class="topbar">
+        <h1>IMC Calculadora</h1>
+      </header>
 
-    <div class="container">
+      <div class="inputs">
+        <div class="field">
+          <label for="altura">Altura</label>
+          <div class="input-wrap">
+            <input type="number" id="altura" value="170" min="0.5" max="300" step="0.1" />
+            <span>cm</span>
+          </div>
+        </div>
 
-        <h1>Calculadora IMC</h1>
+        <div class="field">
+          <label for="peso">Peso</label>
+          <div class="input-wrap">
+            <input type="number" id="peso" value="50" min="1" max="500" step="0.1" />
+            <span>kg</span>
+          </div>
+        </div>
+      </div>
 
-        <label for="peso">Peso (kg)</label>
-        <input type="number" id="peso" step="0.1" placeholder="Ex: 70">
+      <div class="result-panel">
+        <div class="gauge" aria-live="polite">
+          <div class="gauge-ring">
+            <div class="gauge-center">
+              <span class="gauge-label">IMC</span>
+              <strong id="imcValor">0.0</strong>
+            </div>
+          </div>
+        </div>
 
-        <label for="altura">Altura (m)</label>
-        <input type="number" id="altura" step="0.01" placeholder="Ex: 1.70">
+        <div class="result-text">
+          <p class="status-label">Status</p>
+          <h2 id="statusTexto">Normal</h2>
+        </div>
+      </div>
 
-        <button onclick="calcularIMC()">
-            Calcular IMC
-        </button>
+      <div class="info-grid">
+        <div class="info-box">
+          <span>Categoria</span>
+          <strong id="categoriaTexto">Normal</strong>
+        </div>
+        <div class="info-box">
+          <span title="Aproximação com base no meio da faixa normal (IMC 22.5)">Diferença p/ peso ideal</span>
+          <strong id="diferencaTexto">0.0 kg</strong>
+        </div>
+      </div>
 
-        <h2 id="resultado"></h2>
+      <div class="legend">
+        <ul>
+          <li><span class="dot under"></span> Abaixo do peso</li>
+          <li><span class="dot normal"></span> Normal</li>
+          <li><span class="dot overweight"></span> Sobrepeso</li>
+          <li><span class="dot obesity"></span> Obesidade</li>
+        </ul>
+      </div>
 
-    </div>
+      <div class="actions">
+        <button class="calculate-btn" onclick="calcularIMC()">Calcular IMC</button>
+        <button class="reset-btn" type="button" onclick="resetCampos()">Limpar</button>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
